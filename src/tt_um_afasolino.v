@@ -16,11 +16,11 @@ topmodule topmodule(
   .InPE(ui_in[6:3]),
   .clk(clk),
   .enable(ena),
-  .NEP(uio_in[3:0]),
+  .NEP(uio_in[0]),
   .SignExEn(ui_in[7]),
   .rst(rst),
   .InputSel(ui_in[1:0]),
-  .w(ui_in[2:0]),
+  .w(uio_in[3:1]),
   .EPcount(uio_in[7:4]),
   .o(uio_out)
 );
