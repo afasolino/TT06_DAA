@@ -10,6 +10,7 @@ module tt_um_afasolino (
 );
 
 assign uio_oe = 8'h00;
+assign uio_out = 8'h00;
 
 topmodule topmodule(
   .InPE(ui_in[6:3]),
