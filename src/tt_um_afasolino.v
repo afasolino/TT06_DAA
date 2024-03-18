@@ -18,7 +18,7 @@ topmodule topmodule(
   .enable(ena),
   .NEP(uio_in[0]),
   .SignExEn(ui_in[7]),
-  .rst(rst),
+  .rst(rst_n),
   .InputSel(ui_in[1:0]),
   .w(uio_in[3:1]),
   .EPcount(uio_in[7:4]),
