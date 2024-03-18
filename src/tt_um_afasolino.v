@@ -1,6 +1,6 @@
 module tt_um_afasolino (
-    input  wire [7:0] ui_in,    // Dedicated inputs - connected to the input switches
-    output wire [7:0] uo_out,   // Dedicated outputs - connected to the 7 segment display
+    input  wire [7:0] ui_in,    // Dedicated inputs 
+    output wire [7:0] uo_out,   // Dedicated outputs 
     input  wire [7:0] uio_in,   // IOs: Bidirectional Input path
     output wire [7:0] uio_out,  // IOs: Bidirectional Output path
     output wire [7:0] uio_oe,   // IOs: Bidirectional Enable path (active high: 0=input, 1=output)
@@ -10,18 +10,18 @@ module tt_um_afasolino (
 );
 
 
-assign uio_oe = 8'hFF;
+assign uio_oe = {!ena,!ena,!ena,!ena,!ena,!ena,!ena,!ena};
 
 topmodule topmodule(
-  .InPE(ui_in[5:2]),
+  .InPE(ui_in[6:3]),
   .clk(clk),
   .enable(ena),
   .NEP(uio_in[3:0]),
-  .SignExEn(uio_in[7]),
+  .SignExEn(ui_in[7]),
   .rst(rst),
   .InputSel(ui_in[1:0]),
-  .w(uio_in[2:0]),
-  .EPcount(uio_in[6:3]),
+  .w(ui_in[2:0]),
+  .EPcount(uio_in[7:4]),
   .o(uio_out)
 );
 
