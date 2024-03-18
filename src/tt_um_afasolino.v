@@ -9,9 +9,7 @@ module tt_um_afasolino (
     input  wire       rst_n     // reset_n - low to reset
 );
 
-wire [7:0]output;
 assign uio_oe = 8'h00;
-assign uo_out = output;
 
 topmodule topmodule(
   .InPE(ui_in[6:3]),
@@ -23,7 +21,7 @@ topmodule topmodule(
   .InputSel(ui_in[1:0]),
   .w(uio_in[3:1]),
   .EPcount(uio_in[7:4]),
-  .o(output)
+  .o(uo_out)
 );
 
 endmodule
